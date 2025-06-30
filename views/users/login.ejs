@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+<div class="row mt-3">
+  <div class="col-10 col-sm-9 col-lg-6 offset-lg-3 offset-sm-2">
+    <h2>
+      &nbsp;&nbsp;Login on <span style="color: #ee3844">Wanderhaven</span>
+    </h2>
+    <form
+      action="/login"
+      method="POST"
+      class="needs-validation mt-3 ms-3"
+      novalidate
+    >
+      <div class="mb-3 mt-4">
+        <label for="username" class="form-label mb-0">Username</label>
+        <input
+          name="username"
+          placeholder="Enter Username"
+          type="text"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div>
+        <label for="password" class="form-label mb-0">Password</label>
+        <input
+          name="password"
+          placeholder="Enter your Password"
+          type="password"
+          required
+          class="form-control"
+        />
+      </div>
+      <br />
+      <button class="btn btn-success" style="width: 7rem; border: none">
+        Login
+      </button>
+    </form>
+    <hr />
+
+    <p class="ms-3 f-info-link">
+      <b><a href="/forgot">Forgot Password?</a></b>
+    </p>
+    <br />
+    <div class="ms-3 f-info-link">
+      Don't have an account?
+      <a href="/signup" style="font-weight: 600">Sign up</a>
+    </div>
+  </div>
+</div>

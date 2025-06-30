@@ -1,0 +1,120 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+<!-- <form method="GET" action="/listings/new">
+    <button>Create New Listing</button>
+  </form> -->
+
+<div id="filters">
+  <div class="filter">
+    <a href="/listings"
+      ><div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Rooms"
+      ><div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Mountain"
+      ><div><i class="fa-solid fa-mountain-sun"></i></div>
+      <p>Amazing View</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Beach"
+      ><div><i class="fa-solid fa-water-ladder"></i></div>
+      <p>Amazing pool</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Beach"
+      ><div><i class="fa-solid fa-umbrella-beach"></i></div>
+      <p>Beach</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Cities"
+      ><div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic cities</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Camping"
+      ><div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Farms"
+      ><div><i class="fa-solid fa-tractor"></i></div>
+      <p>Farms</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Arctic"
+      ><div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Arctic</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Play"
+      ><div><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+      <p>Play</p></a
+    >
+  </div>
+  <div class="filter">
+    <a href="/listings/search?q=Boat"
+      ><div><i class="fa-solid fa-sailboat"></i></div>
+      <p>Boat</p></a
+    >
+  </div>
+  <div class="tax-toggle p-2">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="switchCheckDefault"
+      />
+      <label class="form-check-label" for="switchCheckDefault"
+        >Display Taxes</label
+      >
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-xxl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
+  <% for(let listing of allListings) { %>
+  <a href="/listings/<%=listing.id%>" class="listing-link"
+    ><div class="card listing-card">
+      <img
+        src="<%=listing.image.url%>"
+        class="card-img-top card_img"
+        style="height: 18rem"
+        alt="listing_img"
+      />
+      <div class="card-body">
+        <p class="card-text">
+          <b><%= listing.title %></b><br />
+          &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+          <span><i class="tax-info"> &nbsp; &nbsp; +18% GST</i></span>
+        </p>
+      </div>
+    </div></a
+  >
+  <% } %>
+</div>
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxinfo = document.getElementsByClassName("tax-info");
+    for (info of taxinfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else info.style.display = "none";
+    }
+  });
+</script>

@@ -1,0 +1,113 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <br />
+    <h3>Create a New Listing</h3>
+    <form
+      method="POST"
+      action="/listings"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div>
+        <label for="title" class="form-label mb-0">Title</label>
+        <input
+          name="listing[title]"
+          placeholder="Add a catchy Title"
+          type="text"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <br />
+      <div>
+        <label for="description" class="form-label mb-0">Description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Enter Description"
+          class="form-control"
+          required
+        ></textarea>
+      </div>
+
+      <br />
+      <div>
+        <label for="image" class="form-label mb-0">Upload Image</label>
+        <input
+          name="listing[image]"
+          type="file"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <br />
+      <div class="row">
+        <div class="col-md-4">
+          <label for="price" class="form-label mb-0">Price</label>
+          <input
+            name="listing[price]"
+            placeholder="Enter Price"
+            type="number"
+            class="form-control mb-3 mb-md-0"
+            min="500"
+            required
+          />
+          <div class="invalid-feedback">Please select a price >= 500</div>
+        </div>
+        <div class="col-md-8">
+          <label for="country" class="form-label mb-0">Country</label
+          ><input
+            name="listing[country]"
+            placeholder="Enter Country"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <br />
+      <div>
+        <label for="location" class="form-label mb-0">Location</label
+        ><input
+          name="listing[location]"
+          placeholder="Enter Location"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <br />
+      <label for="category" class="form-label">Category</label>
+      <select
+        name="listing[category]"
+        id="category"
+        required
+        class="form-control"
+      >
+        <option value="" disabled hidden selected>Select Category</option>
+        <option value="Mountain">Mountain</option>
+        <option value="Beach">Beach</option>
+        <option value="Rooms">Rooms</option>
+        <option value="Camping">Camping</option>
+        <option value="Farms">Farms</option>
+        <option value="Arctic">Arctic</option>
+        <option value="Iconic Cities">Cities</option>
+        <option value="Play">Play</option>
+        <option value="Boat">Boat</option>
+      </select>
+      <br />
+      <button
+        class="btn btn-primary"
+        style="width: 7rem; background-color: #ee3844; border: none"
+      >
+        Add
+      </button>
+    </form>
+  </div>
+</div>
+<br />

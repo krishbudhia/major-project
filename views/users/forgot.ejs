@@ -1,0 +1,54 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+<div class="row mt-3">
+  <div class="col-10 col-sm-9 col-lg-6 offset-lg-3 offset-sm-2">
+    <h2>&nbsp;&nbsp;Forgot Password</h2>
+    <form
+      action="/forgot"
+      method="POST"
+      class="needs-validation mt-3 ms-3"
+      novalidate
+    >
+      <div class="mb-3">
+        <label for="email" class="form-label mb-0">Email</label>
+        <input
+          name="email"
+          placeholder="Enter your Email"
+          type="email"
+          required
+          class="form-control"
+        />
+        <div class="invalid-feedback">Email address is required</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="newpassword" class="form-label mb-0">New Password</label>
+        <input
+          name="newpassword"
+          placeholder="Enter your New Password"
+          type="password"
+          required
+          class="form-control"
+        />
+        <div class="invalid-feedback">Password is required</div>
+      </div>
+      <div>
+        <label for="cnfpassword" class="form-label mb-0"
+          >Confirm Password</label
+        >
+        <input
+          name="cnfpassword"
+          placeholder="Enter your Confirm Password"
+          type="password"
+          required
+          class="form-control"
+        />
+        <div class="invalid-feedback">Password is required</div>
+      </div>
+      <br />
+      <button class="btn btn-success" style="width: 10rem; border: none">
+        Reset Password
+      </button>
+    </form>
+  </div>
+</div>
