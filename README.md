@@ -1,8 +1,8 @@
-🌍 Wanderhaven
+<h1>🌍 Wanderhaven </h1>
 
-WanderHaven is a travel and accommodation booking platform inspired by Airbnb. It allows users to explore destinations, and host their own properties in a seamless, user-friendly environment.
+<i> WanderHaven </i> is a travel and accommodation booking platform inspired by Airbnb. It allows users to explore destinations, and host their own properties in a seamless, user-friendly environment.
 
-🛠 Features
+<h3> 🛠 Features </h3>
 
 🔍 Search and filter accommodations by location, destination and category
 
@@ -16,7 +16,7 @@ WanderHaven is a travel and accommodation booking platform inspired by Airbnb. I
 
 📱 Responsive design for mobile and desktop
 
-⚙️ Tech Stack
+<h3> ⚙️ Tech Stack </h3>
 
 Frontend: HTML / CSS / Bootstrap / JavaScript
 
